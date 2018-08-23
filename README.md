@@ -4,7 +4,7 @@ First run `$ docker volume create pgdata`.
 
 Be sure the Docker Compose CLI is installed, easiest way to do that is `$ pip install docker-compose`
 
-To allow incoming connections from the local network
+To allow incoming connections from the local network (thank you Giuseppe Broccolo @ [RaspberryPG](http://raspberrypg.org/index.html@p=53.html))
 ```shell
 $ sudo iptables -A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
 $ sudo iptables -A OUTPUT -o eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT                                                                                                                    $ sudo iptables -A OUTPUT -o eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
